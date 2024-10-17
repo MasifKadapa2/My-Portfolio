@@ -1,0 +1,216 @@
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-image: url("skillbg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
+    background-color: rgba(20, 43, 192, 0.3);
+    padding: 20px;
+    text-align: center;
+    animation: slideInDown 1s ease-in-out;
+}
+
+.nav-link {
+    color: black;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 20px;
+    transition: color 0.4s, transform 0.4s;
+}
+
+.nav-link:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.skills-title::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Positioning for the underline */
+    left: 0; /* Start from the left */
+    bottom: -5px; /* Adjust based on your layout */
+    width: 100%; /* Full width */
+    height: 3px; /* Thickness of the underline */
+    background-color: yellow; /* Color of the underline */
+    transform: scaleX(0); /* Start with no width */
+    transition: transform 0.4s ease; /* Smooth transition for the underline */
+}
+
+/* Hover effect */
+.skills-title:hover::after {
+    transform: scaleX(1); /* Expand to full width on hover */
+}
+
+/* Heading Animation */
+.animated-heading {
+    font-size: 2.5rem;
+    animation: glow 2s infinite alternate;
+    text-shadow: 0 0 15px #1abc9c, 0 0 30px #3498db;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #1abc9c, 0 0 20px #16a085;
+    }
+    to {
+        text-shadow: 0 0 20px #3498db, 0 0 30px #2980b9;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 30px;
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2rem;
+    margin: 20px 0;
+    color: yellow;
+    animation: fadeIn 1.2s ease-in;
+    position: relative; /* Needed for absolute positioning of the underline */
+    display: inline-block; /* Allows the title to shrink-wrap its content */
+}
+
+.skills-title::after {
+    content: ''; /* Creates a pseudo-element */
+    position: absolute; /* Positioning for the underline */
+    left: 0; /* Start from the left */
+    bottom: -5px; /* Adjust based on your layout */
+    width: 100%; /* Full width */
+    height: 3px; /* Thickness of the underline */
+    background-color: yellow; /* Color of the underline */
+    transform: scaleX(0); /* Start with no width */
+    transition: transform 0.4s ease; /* Smooth transition for the underline */
+}
+
+/* Hover effect */
+.skills-title:hover::after {
+    transform: scaleX(1); /* Expand to full width on hover */
+}
+
+/* Skills Grid */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* First row: 4 columns */
+    gap: 20px;
+    padding: 30px;
+    justify-items: center;
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.skills-container .second-row {
+    grid-column: span 4; /* Ensures second row aligns across full width */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Second row: 3 columns */
+    gap: 20px;
+    justify-content: center; /* Center the row horizontally */
+}
+
+/* Skill Card Styling */
+.skill-card {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.9), rgba(155, 89, 182, 0.9));
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.6s, box-shadow 0.6s;
+}
+
+.skill-card:hover {
+    transform: rotate(3deg) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Ensuring Consistent Image Size */
+.skill-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain; /* Prevents image distortion */
+    margin-bottom: 10px;
+}
+
+/* Different Background Patterns for Cards */
+.skill-card:nth-child(1) { background: linear-gradient(135deg, #3498db, #2980b9); }
+.skill-card:nth-child(2) { background: linear-gradient(135deg, #8e44ad, #9b59b6); }
+.skill-card:nth-child(3) { background: linear-gradient(135deg, #2ecc71, #27ae60); }
+.skill-card:nth-child(4) { background: linear-gradient(135deg, #e67e22, #d35400); }
+.skill-card:nth-child(5) { background: linear-gradient(135deg, #f1c40f, #f39c12); }
+.skill-card:nth-child(6) { background: linear-gradient(135deg, #16a085, #1abc9c); }
+.skill-card:nth-child(7) { background: linear-gradient(135deg, #c0392b, #e74c3c); }
+
+/* Soft Skills Section */
+.soft-skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    animation: fadeInUp 1.2s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.soft-skill {
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.4s, box-shadow 0.4s; /* Added transition */
+}
+
+/* Different Background Patterns for Soft Skills */
+.soft-skill:nth-child(1) {
+    background: linear-gradient(135deg, #3498db, #2980b9); /* Problem Solving */
+}
+
+.soft-skill:nth-child(2) {
+    background: linear-gradient(135deg, #e67e22, #d35400); /* Communication */
+}
+
+.soft-skill:nth-child(3) {
+    background: linear-gradient(135deg, #2ecc71, #27ae60); /* Teamwork */
+}
+
+.soft-skill:nth-child(4) {
+    background: linear-gradient(135deg, #8e44ad, #9b59b6); /* Adaptability */
+}
+
+.soft-skill:nth-child(5) {
+    background: linear-gradient(135deg, #f1c40f, #f39c12); /* Critical Thinking */
+}
+
+/* Hover Effect for Soft Skills */
+.soft-skill:hover {
+    transform: scale(1.1); /* Scale up on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Increase shadow on hover */
+}
+
+/* Footer */
+/* footer {
+    text-align: center;
+    padding: 15px;
+    background-color: rgba(52, 73, 94, 0.8);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+} */

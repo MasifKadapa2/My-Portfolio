@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masif's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Styles for the modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.8); /* Black background with opacity */
+            animation: fadeIn 0.5s; /* Animation for showing the modal */
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 40%; /* Could be more or less, depending on screen size */
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s;
+        }
+
+        /* Close button */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Animation keyframes */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="heading1">
+            <a id="heading" href="index.html" style="font-size: 40px; display: inline; padding-left: 10px;">Masif Kadapa</a>
+            <a class="info" href="projects.html" target="_blank">Projects</a>
+            <a class="info" href="skills.html">Skills</a>
+            <a class="info" href="#" id="contactLink">Contact Me</a> <!-- Updated link -->
+            <br><br><br>
+        </div>
+        <label for="links">
+            <button id="resume" style="text-align: center;">
+                <a class="info2" href="https://drive.google.com/file/d/18-G2qowZ2baF-3SIjY-_EkJBsAvhqpj8/view" target="_blank" style="color: black;">Resume</a>
+            </button>
+            <button class="but" style="text-align: center;">
+                <a class="info2" href="https://www.linkedin.com/in/kadapa-masif-13601424b/" target="_blank" style="color: black;">LinkedIn</a>
+            </button>
+            <button class="but" style="text-align: center;">
+                <a class="info2" href="https://github.com/MasifKadapa2" target="_blank" style="color: black;">Github</a>
+            </button>
+            <br>
+        
+        <div class="content-container">
+            <div id="imgback">
+                <img id="photo" src="new passport.jpg" alt="Photo">
+            </div>
+            <div id="text-content">
+                <p>I am currently a 4th-year BTech student at SRM AP University, specializing in Computer Science and Engineering with a focus on Artificial Intelligence and Machine Learning. My academic journey has equipped me with a strong foundation in several programming languages, including Python and C++. </p>
+                <p>Additionally, I have gained valuable insights into web development, particularly in front-end technologies, and have developed a keen interest in data analysis and algorithm design. My technical skill set is complemented by my understanding of data structures and algorithms, which I have honed through various projects and coursework. </p>
+                <p>Beyond my technical capabilities, I pride myself on my excellent communication skills and leadership qualities. These have been demonstrated through my active participation in team projects and my ability to convey complex ideas clearly and effectively. I thrive in collaborative environments and enjoy leading initiatives that drive innovation and success.</p>
+                <p>I am passionate about leveraging my skills to solve real-world problems and am constantly seeking opportunities to expand my knowledge and expertise. My goal is to continue growing as a proficient and versatile engineer.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Modal for contact information -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Information</h2>
+            <p>Name: Masif Kadapa</p>
+            <p>Email: kadapamasif@gmail.com</p>
+            <p>Phone: +91-9390480856</p> <!-- Replace with your actual phone number -->
+        </div>
+    </div>
+
+    <script>
+        // Get modal elements
+        var modal = document.getElementById("contactModal");
+        var contactLink = document.getElementById("contactLink");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the contact link, open the modal
+        contactLink.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on the close button, close the modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
