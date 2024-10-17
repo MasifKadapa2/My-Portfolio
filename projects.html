@@ -5,7 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Projects</title>
     <link rel="stylesheet" href="projects.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet"> <!-- Elegant Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.5s;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            color: black;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            animation: slideIn 0.5s;
+        }
+
+        .close {
+            float: right;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: red;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,7 +60,7 @@
         <nav>
             <a class="nav-link" href="index.html">Home</a>
             <a class="nav-link" href="skills.html">Skills</a>
-            <a class="nav-link" href="contact.html">Contact Me</a>
+            <a class="nav-link" href="#" id="contactLink">Contact Me</a> <!-- Contact Link -->
         </nav>
     </header>
 
@@ -22,40 +69,68 @@
             <img src="python.jpg" alt="Python Project">
             <h2>Task Manager</h2>
             <p>Developed a secure, priority-based task manager using linked lists and priority queues for efficient task handling.</p>
-            <a href="project1-details.html" class="project-link">View Details</a>
+            <a href="https://github.com/MasifKadapa2/Python_Projects/blob/main/Task%20Manager.py" class="project-link" target="_blank">View Details</a>
         </div>
 
         <div class="project-card">
             <img src="machine.jpg" alt="Machine Learning Project">
             <h2>Diabetes Classification</h2>
             <p>Built a diabetes prediction model using machine learning with Pandas for pre-processing the Kaggle dataset.</p>
-            <a href="project2-details.html" class="project-link">View Details</a>
+            <a href="https://github.com/MasifKadapa2/Machine-Learning-Projects/blob/main/Diabetes%20Classification.ipynb" class="project-link" target="_blank">View Details</a>
         </div>
 
         <div class="project-card">
             <img src="analytics.jpg" alt="Data Analytics Project">
             <h2>Credit Card Fraud Detection</h2>
-            <p>Implemented a fraud detection system with various machine learning algorithms to classify fraudulent transactions.</p>
-            <a href="project3-details.html" class="project-link">View Details</a>
+            <p>Implemented a fraud detection system with machine learning algorithms to classify fraudulent transactions.</p>
+            <a href="https://github.com/MasifKadapa2/Data-Analytics-Project/blob/main/Credit_Card_Fraud_Detection.ipynb" class="project-link" target="_blank">View Details</a>
         </div>
 
         <div class="project-card">
             <img src="web2.png" alt="Front-end Project">
             <h2>Personal Portfolio</h2>
             <p>Created a responsive personal portfolio website showcasing projects, skills, and contact information using HTML and CSS.</p>
-            <a href="project4-details.html" class="project-link">View Details</a>
-        </div>
-        
-        <div class="project-card">
-            <img src="web.png" alt="Front-end Project">
-            <h2>Personal Portfolio</h2>
-            <p>Created a responsive personal portfolio website showcasing projects, skills, and contact information using HTML and CSS.</p>
-            <a href="project4-details.html" class="project-link">View Details</a>
+            <a href="index.html" class="project-link">View Details</a>
         </div>
     </div>
 
     <footer>
         <p id="foot">&copy; 2024 Masif Kadapa. All rights reserved.</p>
     </footer>
+
+    <!-- Modal for Contact Information -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contact Information</h2>
+            <p>Name: Masif Kadapa</p>
+            <p>Email: kadapamasif@gmail.com</p>
+            <p>Phone: +91-9390480856</p> <!-- Replace with your number -->
+        </div>
+    </div>
+
+    <script>
+        // Get modal elements
+        var modal = document.getElementById("contactModal");
+        var contactLink = document.getElementById("contactLink");
+        var closeBtn = document.getElementsByClassName("close")[0];
+
+        // Open modal on click
+        contactLink.onclick = function () {
+            modal.style.display = "block";
+        };
+
+        // Close modal on 'x' button click
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Close modal if clicked outside of it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 </body>
 </html>
